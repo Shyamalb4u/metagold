@@ -316,3 +316,22 @@ exports.updateUser = (req, res, next) => {
       throw err;
     });
 };
+
+exports.getLogin = (req, res, next) => {
+  const uid = req.params.mail;
+  const pass = req.params.pass;
+  new sql.Request()
+    .input("mail", uid)
+    .input("pass", uid)
+    .execute("getLogin")
+    .then((result) => {
+      if (result.recordset[0]) {
+        res.status(200).json({ data: result.recordset });
+      } else {
+        res.status(200).json({ data: "NO" });
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
