@@ -19,7 +19,7 @@ router.get("/checkWithdraw/:phrases", userController.getWithdrawCheck);
 router.get("/getWithdraw/:phrases", userController.getWithdraw);
 router.get("/getall", userController.getall);
 router.get("/pendingWithdrawal", userController.getPendingWithdraw);
-router.get("/login", userController.getLogin);
+router.get("/login/:mail/:pass", userController.getLogin);
 
 router.post("/signup", userController.signup);
 router.post("/booking", userController.booking);
