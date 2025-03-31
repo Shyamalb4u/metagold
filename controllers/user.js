@@ -322,7 +322,7 @@ exports.getLogin = (req, res, next) => {
   const pass = req.params.pass;
   new sql.Request()
     .input("mail", uid)
-    .input("pass", uid)
+    .input("pass", pass)
     .execute("getLogin")
     .then((result) => {
       if (result.recordset[0]) {
