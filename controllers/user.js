@@ -328,7 +328,7 @@ exports.getLogin = (req, res, next) => {
       if (result.recordset[0]) {
         res.status(200).json({ data: result.recordset });
       } else {
-        res.status(200).json({ data: "NO" });
+        res.status(404).json({ data: "NO" });
       }
     })
     .catch((err) => {
